@@ -1,6 +1,7 @@
-import SkyHighBuilding from './6-sky_high.js';
+import EVCar from './100-evcar.js';
 
-const building = new SkyHighBuilding(140, 60);
-console.log(building.sqft);
-console.log(building.floors);
-console.log(building.evacuationWarningMessage());
+const ec1 = new EVCar("Tesla", "Turbo", "Red", "250");
+console.log(ec1);
+
+const ec2 = ec1.cloneCar();
+console.log(ec2);
