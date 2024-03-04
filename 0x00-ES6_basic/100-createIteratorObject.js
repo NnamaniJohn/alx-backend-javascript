@@ -2,16 +2,20 @@ export default function createIteratorObject(report) {
   return {
     [Symbol.iterator]() {
       let index = 0;
-      const keys = Object.keys(report);
-      const { length } = keys;
+      let count = 0;
+      const employees = Object.values(report.allEmployees);
       return {
         next() {
-          if (index < length) {
-            const key = keys[index];
-            index += 1;
-            return { value: report[key], done: false };
+          if (count < employees[index].length) {
+            count += 1;
+            return { value: employees[index][count - 1], done: false };
           }
-          return { done: true };
+          count = 1;
+          index += 1;
+          if (index >= employees.length) {
+            return { done: true };
+          }
+          return { value: employees[index][count - 1], done: false };
         },
       };
     },
