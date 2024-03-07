@@ -8,6 +8,10 @@ export default class Airport {
   }
 
   toString() {
+    return `[${typeof this} ${this._code}]`;
+  }
+
+  valueOf() {
     return this._code;
   }
 }
