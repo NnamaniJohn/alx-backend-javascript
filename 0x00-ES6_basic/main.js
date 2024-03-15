@@ -1,3 +1,4 @@
-import getSanFranciscoDescription from './6-string-interpolation';
+import taskBlock from './1-block-scoped.js';
 
-console.log(getSanFranciscoDescription());
+console.log(taskBlock(true));
+console.log(taskBlock(false));
